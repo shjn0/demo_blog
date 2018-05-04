@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'microposts/index'
+  get 'microposts/show'
+
   get    'users/new'
 
 	root   'static_pages#home'

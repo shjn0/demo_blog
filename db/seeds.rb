@@ -22,11 +22,11 @@ User.create!(name:  "Example User",
                password_confirmation: password)
 end
 
-users = User.order(:created_at).take(6)
-50.times do
-  content = Faker::Lorem.sentence(5)
-  users.each { |user| user.microposts.create!(content: content) }
-end
+# users = User.order(:created_at).take(6)
+# 50.times do
+#   content = Faker::Lorem.sentence(5)
+#   users.each { |user| user.microposts.create!(content: content) }
+# end
 
 # Following relationships
 users = User.all
@@ -35,3 +35,8 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+10.times do |i|
+  Micropost.create title: "Micropost #{i}", content: "test", user_id: 1,
+  image_url: "http://static2.yan.vn/YanNews/2167221/201704/20170408-094853-co-gai-hai-phong-xinh-dep-gay-sot-chi-sau-mot-buc-anh_600x900.jpg"
+end

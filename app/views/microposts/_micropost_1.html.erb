@@ -1,0 +1,14 @@
+<!-- Blog Post -->
+<div class="panel panel-default mb-4">
+  <img class="panel-img-top" src="<%= micropost.image_url %>" alt="panel image cap">
+  <%#= image_tag micropost.image_url, class: "panel-img-top" %>
+  <div class="panel-body">
+    <h2 class="panel-title"><%= micropost.title %></h2>
+    <p class="panel-text"><%= micropost.content %></p>
+    <a href="#" class="btn btn-primary">Read More &rarr;</a>
+  </div>
+  <div class="panel-footer text-muted">
+    <%= micropost.created_at %> by
+    <a href="#">Start Bootstrap</a>
+  </div>
+</div>
