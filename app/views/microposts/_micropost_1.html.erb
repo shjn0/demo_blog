@@ -5,7 +5,8 @@
   <div class="panel-body">
     <h2 class="panel-title"><%= micropost.title %></h2>
     <p class="panel-text"><%= micropost.content %></p>
-    <a href="http://localhost:3000/microposts/show" target="_blank" class="btn btn-primary">Read More &rarr;</a>
+<!--     <a href="show" target="_blank" class="btn btn-primary">Read More &rarr;</a> -->
+    <%= link_to "Read More", micropost_path(micropost.id), target: "_blank", class: "btn btn-lg btn-primary" %>
   </div>
   <div class="panel-footer text-muted">
     <%= micropost.created_at %> by

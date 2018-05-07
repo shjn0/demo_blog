@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  get 'microposts/index'
-  get 'microposts/show'
+  get 'comments/index'
+
+  get 'comments/create'
+
+  # get 'microposts/index'
+  # get 'microposts/show'
 
   get    'users/new'
 
@@ -21,7 +25,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :microposts,          only: [:create, :destroy]
+  resources :microposts
   resources :relationships,       only: [:create, :destroy]
 
 	# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

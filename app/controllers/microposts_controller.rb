@@ -6,6 +6,11 @@ class MicropostsController < ApplicationController
     @microposts = Micropost.all
   end
 
+  def show
+    @micropost = Micropost.find_by(id: params[:id])
+    @comments = @micropost.comments
+  end
+
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
