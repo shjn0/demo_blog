@@ -18,7 +18,7 @@
 
       <!-- Preview Image -->
       <!-- <img class="img-fluid rounded" src="http://placehold.it/900x300" alt=""> -->
-      <%= image_tag @micropost.image_url, class: "img-fluid rounded" %>
+      <%#= image_tag @micropost.image_url, class: "img-fluid rounded" %>
 
       <hr>
 
@@ -46,10 +46,9 @@
         </div>
       </div> -->
 
-      <%= form_for @omment, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-        <%= f.hidden_field_tag :micropost_id, @user.microposts(params[:micropost_id]) %>
-        <%= f.text_field :title %>
-        <%= f.text_area :body, size: "60x12" %>
+      <%= form_for @comment do |f| %>
+        <%= f.hidden_field :micropost_id, value: @micropost.id %>
+        <%= f.text_area :content, size: "60x2" %>
         <%= f.submit "Comment" %>
       <% end %>
 

@@ -36,7 +36,7 @@ followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
-10.times do |i|
-  Micropost.create title: "Micropost #{i}", content: "test", user_id: 1,
-  image_url: "http://static2.yan.vn/YanNews/2167221/201704/20170408-094853-co-gai-hai-phong-xinh-dep-gay-sot-chi-sau-mot-buc-anh_600x900.jpg"
-end
+# 10.times do |i|
+#   Micropost.create title: "Micropost #{i}", content: "test", user_id: 1,
+#   image_url: "http://static2.yan.vn/YanNews/2167221/201704/20170408-094853-co-gai-hai-phong-xinh-dep-gay-sot-chi-sau-mot-buc-anh_600x900.jpg"
+# end
