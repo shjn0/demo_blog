@@ -34,7 +34,7 @@
       <hr>
 
       <!-- Comments Form -->
-      <div class="panel panel-default my-4">
+<!--       <div class="panel panel-default my-4">
         <h5 class="panel-header">Leave a Comment:</h5>
         <div class="panel-body">
           <form>
@@ -44,7 +44,14 @@
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
-      </div>
+      </div> -->
+
+      <%= form_for @omment, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+        <%= f.hidden_field_tag :micropost_id, @user.microposts(params[:micropost_id]) %>
+        <%= f.text_field :title %>
+        <%= f.text_area :body, size: "60x12" %>
+        <%= f.submit "Comment" %>
+      <% end %>
 
       <%= render @comments %>
 
